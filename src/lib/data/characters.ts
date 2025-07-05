@@ -351,4 +351,14 @@ export const characters: Character[] = [
         gender: ["female"],
         selected: true,
     },
+    {
+        id: 35,
+        slug: "lupa",
+        displayName: "Lupa",
+        weapon: "broadblade",
+        rarity: 5,
+        attribute: ["fusion"],
+        gender: ["female"],
+        selected: true,
+    },
 ];
