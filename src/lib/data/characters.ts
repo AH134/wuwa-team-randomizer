@@ -72,16 +72,6 @@ export const characters: Character[] = [
         selected: true,
     },
     {
-        id: 34,
-        slug: "cartethyia",
-        displayName: "Cartethyia",
-        weapon: "sword",
-        rarity: 5,
-        attribute: ["aero"],
-        gender: ["female"],
-        selected: true,
-    },
-    {
         id: 7,
         slug: "changli",
         displayName: "Changli",
@@ -351,4 +341,24 @@ export const characters: Character[] = [
         gender: ["female"],
         selected: true,
     },
+    {
+        id: 34,
+        slug: "cartethyia",
+        displayName: "Cartethyia",
+        weapon: "sword",
+        rarity: 5,
+        attribute: ["aero"],
+        gender: ["female"],
+        selected: true,
+    },
+    {
+        id: 35,
+        slug: "phrolova",
+        displayName: "Phrolova",
+        weapon: "rectifier",
+        rarity: 5,
+        attribute: ["havoc"],
+        gender: ["female"],
+        selected: true,
+    }
 ];
