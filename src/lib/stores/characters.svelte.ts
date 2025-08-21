@@ -78,7 +78,7 @@ class CharacterManager {
             this.value = this.value.map((character) => ({
                 ...character,
                 selected: idSet.has(character.id),
-            }));
+            })).sort((a, b) => a.displayName.localeCompare(b.displayName));
         }
     }
 
