@@ -8,6 +8,7 @@
     import { shuffle } from "./lib/utils/shuffle";
     import { MAX_RANDOMIZED_CHARACTERS } from "./lib/utils/const";
     import AttributeButton from "./lib/components/AttributeButton.svelte";
+    import Changelog from "./lib/components/Changelog.svelte";
 
     let randomizedCharacters: CharacterCard[] = $state([]);
 
@@ -100,5 +101,9 @@
                 }}
             />
         {/each}
+    </div>
+
+    <div class="mx-auto mt-8 max-w-3xl">
+        <Changelog />
     </div>
 </main>
