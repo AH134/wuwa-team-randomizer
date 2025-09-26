@@ -52,12 +52,14 @@ class CharacterManager {
     }
 
     private initializeCharacters() {
-        this.value = characters.map((character) => ({
-            ...character,
-            charSrc: getCharacterImage(character.slug),
-            attributeSrc: getAttributeImage(character.attribute[0]),
-            weaponSrc: getWeaponImage(character.weapon),
-        }));
+        this.value = characters
+            .map((character) => ({
+                ...character,
+                charSrc: getCharacterImage(character.slug),
+                attributeSrc: getAttributeImage(character.attribute[0]),
+                weaponSrc: getWeaponImage(character.weapon),
+            }))
+            .sort((firstCharacter, secondCharacter) => firstCharacter.slug.localeCompare(secondCharacter.slug));
     }
 
     private initializeAttributes() {
@@ -78,7 +80,7 @@ class CharacterManager {
             this.value = this.value.map((character) => ({
                 ...character,
                 selected: idSet.has(character.id),
-            })).sort((a, b) => a.displayName.localeCompare(b.displayName));
+            }))
         }
     }
 
