@@ -380,5 +380,25 @@ export const characters: Character[] = [
         attribute: ["havoc"],
         gender: ["female"],
         selected: true,
+    },
+    {
+        id: 38,
+        slug: "galbrena",
+        displayName: "Galbrena",
+        weapon: "pistol",
+        rarity: 5,
+        attribute: ["fusion"],
+        gender: ["female"],
+        selected: true,
+    },
+    {
+        id: 39,
+        slug: "qiuyuan",
+        displayName: "Qiuyuan",
+        weapon: "sword",
+        rarity: 5,
+        attribute: ["aero"],
+        gender: ["male"],
+        selected: true,
     }
 ];

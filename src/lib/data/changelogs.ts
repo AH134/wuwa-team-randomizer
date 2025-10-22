@@ -19,13 +19,19 @@ export const changelogs: Changelog[] = [
             "Added Character(s): Lupa"
         ]
     },
-
     {
         version: "1.2.4",
         date: "2025-09-25",
         changes: [
             "Added Character(s): Iuno, Augusta, and Phrolova",
             "Sort characters alphabetically",
+        ]
+    },
+    {
+        version: "1.2.5",
+        date: "2025-10-21",
+        changes: [
+            "Added Character(s): Galbrena, Qiuyuan",
         ]
     }
 ];
