@@ -400,5 +400,26 @@ export const characters: Character[] = [
         attribute: ["aero"],
         gender: ["male"],
         selected: true,
+    },
+    {
+        id: 40,
+        slug: "buling",
+        displayName: "Buling",
+        weapon: "rectifier",
+        rarity: 4,
+        attribute: ["electro"],
+        gender: ["female"],
+        selected: true,
+    },
+    {
+        id: 41,
+        slug: "chisa",
+        displayName: "Chisa",
+        weapon: "broadblade",
+        rarity: 5,
+        attribute: ["havoc"],
+        gender: ["female"],
+        selected: true,
     }
+
 ];
