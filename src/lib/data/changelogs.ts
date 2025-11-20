@@ -33,5 +33,12 @@ export const changelogs: Changelog[] = [
         changes: [
             "Added Character(s): Galbrena, Qiuyuan",
         ]
-    }
+    },
+    {
+        version: "1.2.6",
+        date: "2025-11-20",
+        changes: [
+            "Added Character(s): Chisa, Buling",
+        ]
+    },
 ];
