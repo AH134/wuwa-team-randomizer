@@ -33,6 +33,7 @@
     };
 
     $inspect(selectedCharacters.isAllDeselected);
+    $inspect(randomizedCharacters);
     const generateRandomizedCharacters = () => {
         if (selectedCharacters.isAllDeselected) return;
 
@@ -51,9 +52,14 @@
         );
 
         let randomizedCharactersTemp = shuffle(selectableCharacters, length);
+        let remainingEmptyTeams = teamCount - Math.ceil(length / 3);
         while (randomizedCharactersTemp.length) {
             randomizedCharacters.push(randomizedCharactersTemp.splice(0, 3));
         }
+        randomizedCharacters = [
+            ...randomizedCharacters,
+            ...Array.from({ length: remainingEmptyTeams }, () => []),
+        ];
     };
 </script>
 
