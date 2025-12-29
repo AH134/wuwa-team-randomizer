@@ -41,6 +41,7 @@ class CharacterManager {
         );
     });
     isAllSelected = $derived(!this.value.some((c) => !c.selected));
+    isAllDeselected = $derived(!this.value.some((c) => c.selected));
     selectedIds = $derived(
         this.value.filter((c) => c.selected).map((c) => c.id),
     );

@@ -2,7 +2,9 @@ import type { Attribute, Gender, Rarity, Weapon } from "../types/types";
 
 export const LOCAL_SELECTED_CHAR_KEY = "selectedCharacters";
 
-export const MAX_RANDOMIZED_CHARACTERS = 9;
+export const MAX_TEAM_COUNT = 10;
+
+export const MIN_TEAM_COUNT = 1;
 
 export const weaponNames: Weapon[] = [
     "broadblade",

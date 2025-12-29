@@ -6,13 +6,39 @@
         type CharacterCard,
     } from "./lib/stores/characters.svelte";
     import { shuffle } from "./lib/utils/shuffle";
-    import { MAX_RANDOMIZED_CHARACTERS } from "./lib/utils/const";
+    import { MAX_TEAM_COUNT, MIN_TEAM_COUNT } from "./lib/utils/const";
     import AttributeButton from "./lib/components/AttributeButton.svelte";
     import Changelog from "./lib/components/Changelog.svelte";
+    import { characters } from "./lib/data/characters";
+    import { innerHeight } from "svelte/reactivity/window";
 
-    let randomizedCharacters: CharacterCard[] = $state([]);
+    let teamCount = $state(MIN_TEAM_COUNT);
+    let maxRandomizedCharacters = $derived(teamCount * 3);
+    let randomizedCharacters: CharacterCard[][] | null = $derived(
+        Array.from({ length: teamCount }, () => []),
+    );
 
+    const resetTeams = () => {
+        randomizedCharacters = Array.from({ length: 1 }, () => []);
+        teamCount = MIN_TEAM_COUNT;
+    };
+
+    const removeTeam = () => {
+        if (teamCount != MIN_TEAM_COUNT) {
+            teamCount -= 1;
+        }
+    };
+
+    const addTeam = () => {
+        if (teamCount < MAX_TEAM_COUNT) {
+            teamCount += 1;
+        }
+    };
+
+    $inspect(selectedCharacters.isAllDeselected);
     const generateRandomizedCharacters = () => {
+        if (selectedCharacters.isAllDeselected) return;
+
         randomizedCharacters = [];
         const selectableCharacters = selectedCharacters.value.filter(
             (character) => character.selected,
@@ -24,10 +50,13 @@
 
         const length = Math.min(
             selectableCharacters.length,
-            MAX_RANDOMIZED_CHARACTERS,
+            maxRandomizedCharacters,
         );
 
-        randomizedCharacters = shuffle(selectableCharacters, length);
+        let randomizedCharactersTemp = shuffle(selectableCharacters, length);
+        while (randomizedCharactersTemp.length) {
+            randomizedCharacters.push(randomizedCharactersTemp.splice(0, 3));
+        }
     };
 </script>
 
@@ -46,34 +75,37 @@
 <main class="p-2">
     <div class="flex flex-wrap justify-center gap-3 align-middle">
         {#key randomizedCharacters}
-            {#each [0, 3, 6] as start (start)}
-                <DisplayContainer
-                    randomizedCharacters={randomizedCharacters.slice(
-                        start,
-                        start + 3,
-                    )}
-                />
+            {#each randomizedCharacters as randomizedTeams, idx (idx)}
+                <DisplayContainer randomizedCharacters={randomizedTeams} />
             {/each}
         {/key}
     </div>
     <div class="mt-4 flex flex-wrap justify-center gap-2 sm:grid-cols-3">
         <button
-            class="h-12 w-28 cursor-pointer rounded-md border-2 border-zinc-800 bg-zinc-950 p-1 transition-all hover:bg-zinc-900"
+            class="h-12 w-32 cursor-pointer rounded-md border-2 border-zinc-800 bg-zinc-950 p-1 transition-all hover:bg-zinc-900"
             onclick={selectedCharacters.toggleAll}
             >{selectedCharacters.isAllSelected
                 ? "Deselect all"
                 : "Select all"}</button
         >
         <button
-            class="h-12 w-36 cursor-pointer rounded-tl-md rounded-br-md bg-zinc-100 p-1 text-zinc-900 transition-all hover:bg-white"
-            onclick={generateRandomizedCharacters}>Generate teams</button
+            class="h-12 w-32 cursor-pointer rounded-md border-2 border-zinc-800 bg-zinc-950 p-1 transition-all hover:bg-zinc-900"
+            onclick={resetTeams}>Reset</button
         >
         <button
-            class="h-12 w-28 cursor-pointer rounded-md border-2 border-zinc-800 bg-zinc-950 p-1 transition-all hover:bg-zinc-900"
-            onclick={() => {
-                randomizedCharacters = [];
-            }}>Reset</button
+            class="h-12 w-34 cursor-pointer rounded-tl-md rounded-br-md bg-zinc-100 p-1 text-lg text-zinc-900 transition-all hover:bg-white"
+            onclick={generateRandomizedCharacters}>Generate</button
         >
+        <button
+            class="h-12 w-32 cursor-pointer rounded-md border-2 border-zinc-800 bg-zinc-950 p-1 transition-all hover:bg-zinc-900"
+            onclick={addTeam}>Add Team</button
+        >
+        {#if teamCount != 1}
+            <button
+                class="h-12 w-32 cursor-pointer rounded-md border-2 border-zinc-800 bg-zinc-950 p-1 transition-all hover:bg-zinc-900"
+                onclick={removeTeam}>Remove Team</button
+            >
+        {/if}
     </div>
 
     <div class="mt-4 mb-4 flex flex-wrap justify-center gap-1">

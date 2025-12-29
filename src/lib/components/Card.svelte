@@ -25,6 +25,8 @@
         primary: string;
         secondary: string;
     };
+
+    // svelte-ignore state_referenced_locally
     const rarityColor: RarityColor = {
         primary: rarity == 5 ? "bg-yellow-500" : "bg-purple-500",
         secondary: rarity == 5 ? "bg-yellow-200" : "bg-purple-200",
