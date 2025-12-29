@@ -420,6 +420,16 @@ export const characters: Character[] = [
         attribute: ["havoc"],
         gender: ["female"],
         selected: true,
+    },
+    {
+        id: 42,
+        slug: "lynae",
+        displayName: "Lynae",
+        weapon: "pistol",
+        rarity: 5,
+        attribute: ["spectro"],
+        gender: ["female"],
+        selected: true,
     }
 
 ];
