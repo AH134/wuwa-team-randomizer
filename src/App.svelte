@@ -8,9 +8,6 @@
     import { shuffle } from "./lib/utils/shuffle";
     import { MAX_TEAM_COUNT, MIN_TEAM_COUNT } from "./lib/utils/const";
     import AttributeButton from "./lib/components/AttributeButton.svelte";
-    import Changelog from "./lib/components/Changelog.svelte";
-    import { characters } from "./lib/data/characters";
-    import { innerHeight } from "svelte/reactivity/window";
 
     let teamCount = $state(MIN_TEAM_COUNT);
     let maxRandomizedCharacters = $derived(teamCount * 3);
@@ -133,9 +130,5 @@
                 }}
             />
         {/each}
-    </div>
-
-    <div class="mx-auto mt-8 max-w-3xl">
-        <Changelog />
     </div>
 </main>
