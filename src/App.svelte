@@ -32,8 +32,8 @@
         }
     };
 
-    $inspect(selectedCharacters.isAllDeselected);
-    $inspect(randomizedCharacters);
+    // $inspect(selectedCharacters.isAllDeselected);
+    // $inspect(randomizedCharacters);
     const generateRandomizedCharacters = () => {
         if (selectedCharacters.isAllDeselected) return;
 

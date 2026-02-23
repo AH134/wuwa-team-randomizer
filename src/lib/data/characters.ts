@@ -430,6 +430,26 @@ export const characters: Character[] = [
         attribute: ["spectro"],
         gender: ["female"],
         selected: true,
+    },
+    {
+        id: 43,
+        slug: "mornye",
+        displayName: "Mornye",
+        weapon: "broadblade",
+        rarity: 5,
+        attribute: ["fusion"],
+        gender: ["female"],
+        selected: true,
+    },
+    {
+        id: 44,
+        slug: "aemeath",
+        displayName: "Aemeath",
+        weapon: "sword",
+        rarity: 5,
+        attribute: ["fusion"],
+        gender: ["female"],
+        selected: true,
     }
 
 ];
