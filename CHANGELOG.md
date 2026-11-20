@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.10] - 2026-11-19
+
+### Added
+
+- New Character(s): JHsin, Jingran, Lily, Qingxiao, Suisui, Xuoming, Yangyang Xuanling
+- Streamline adding characters with python scripts
+
 ## [1.2.9] - 2026-06-10
 
 ### Added
@@ -70,6 +77,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Updated name in package.json to wuwa-team-randomizer
 - Updated README.md to include changelog and license information
 
+[1.2.10]: https://github.com/AH134/wuwa-team-randomizer/compare/v1.2.9..v1.2.10
 [1.2.9]: https://github.com/AH134/wuwa-team-randomizer/compare/v1.2.8..v1.2.9
 [1.2.8]: https://github.com/AH134/wuwa-team-randomizer/compare/v1.2.7..v1.2.8
 [1.2.7]: https://github.com/AH134/wuwa-team-randomizer/compare/v1.2.6..v1.2.7
