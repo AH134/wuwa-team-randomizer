@@ -584,7 +584,7 @@ export const characters: Character[] = [
     {
         id: 58,
         slug: "yangyang-xuanling",
-        displayName: "Yangyang Xuanling",
+        displayName: "Yangyang: Xuanling",
         weapon: "sword",
         rarity: 5,
         attribute: ["havoc"],
